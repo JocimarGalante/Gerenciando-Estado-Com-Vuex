@@ -9,18 +9,14 @@ const store = new Vuex.Store({
     },
     mutations:{
         decrement: state => state.counter--,
-        increment: (state, num) => state.counter = num * 3
+        increment: state => state.counter++
     },
     getters: {
         counter: state => state.counter
     },
     actions: {
         decrement: ({commit}) => commit('decrement'),
-        increment: ({commit}) => {
-            setTimeout(()=>{
-                commit('increment', 5)
-            }, 2000)
-        }
+        increment: ({commit}) => commit('increment')
     }
 })
 
